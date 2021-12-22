@@ -1,0 +1,63 @@
+SHELL
+The shell is a program that takes keyboard commands and passes them to the operating system to carry out. 
+Almost all Linux distributions supply a shell program from the GNU Project called bash. The name is an acronym for bourne-again shell, a reference to the fact that bash is an enhanced replacement for sh, the original Unix shell program written by Steve Bourne.
+[...]
+A number of other terminal emulators are available for Linux, but they all basically do the same thing: give us access to the shell. 
+
+
+
+
+WILDCARDS
+* 							Matches any characters
+? 							Matches any single character
+[characters] 				Matches any character that is a member of the set characters
+[!characters] 				Matches any character that is not a member of the set characters
+[[:class:]] 				Matches any character that is a member of the specified class
+			
+Commonly Used Character Classes
+Character class 			Meaning
+[:alnum:] 					Matches any alphanumeric character
+[:alpha:] 					Matches any alphabetic character
+[:digit:] 					Matches any numeral
+[:lower:] 					Matches any lowercase letter
+[:upper:] 					Matches any uppercase letter
+			
+Example			
+Pattern 					Matches
+* 							All files
+g* 							Any file beginning with g
+b*.txt 						Any file beginning with b followed by any characters and ending with .txt
+Data??? 					Any file beginning with Data followed by exactly three characters
+[abc]* 						Any file beginning with either an a, a b, or a c
+BACKUP.[0-9][0-9][0-9] 		Any file beginning with BACKUP. followed by exactly three numerals
+[[:upper:]]* 				Any file beginning with an uppercase letter
+[![:digit:]]* 				Any file not beginning with a numeral
+*[[:lower:]123] 			Any file ending with a lowercase letter or the numerals 1, 2, or 3
+
+
+
+
+Arithmetic Expansion		Example: echo $((2+2))
+Single parentheses may be used to group multiple subexpressions
+
+Arithmetic Operators
++ - * / % **
+
+
+
+
+Brace Expansion				Example: echo Front-{A,B,C}-Back
+									  Front-A-Back Front-B-Back Front-C-Back
+									 echo Number_{1..5}
+									  Number_1 Number_2 Number_3 Number_4 Number_5
+									 echo {01..15}
+									  01 02 03 04 05 06 07 08 09 10 11 12 13 14 15
+									 echo {001..15}
+									  001 002 003 004 005 006 007 008 009 010 011 012 013 014 015
+									mkdir {2007..2009}-{01..12}
+									
+									
+
+Command substitution		Example: ls -l $(which cp)	or other notation ls -l `which cp`
+									  -rwxr-xr-x 1 root root 71516 2007-12-05 08:58 /bin/cp
+							

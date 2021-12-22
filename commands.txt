@@ -1,0 +1,49 @@
+cal						-> calendar
+
+
+
+ls -A					-> Like the -a option except it does not list . (current directory) and .. (parent directory)
+ls -directory			-> Ordinarily, if a directory is specified, ls will list the contents of the directory, not the directory itself. 
+							Use this option in conjunction with the -l option to see details about the directory rather than its contents.
+ls -rather				-> Display the results in reverse order. Normally, ls displays its results in ascending alphabetical order.
+ls -S					-> Sort result by file size
+
+
+
+file filename			-> The file command will print a brief description of the file’s contents.
+
+
+
+cp -u --update			-> Only copy files that either don’t exist or are newer than the existing corresponding files in the destination directory. 
+							This is useful when copying large numbers of files as it skips files that don’t need to be copied
+							
+							
+mv file1 file2 dir1		-> Move file1 and file2 into directory dir1. The directory dir1 must already exist.
+
+
+
+type command			->  is a shell builtin that displays the kind of command the shell will execute, given a particular command name.
+							Example: [me@linuxbox ~]$ type type
+										type is a shell builtin
+									 [me@linuxbox ~]$ type ls
+										ls is aliased to `ls --color=tty
+										
+										
+										
+apropos term			-> Display Appropriate Commands.
+							It is also possible to search the list of man pages for possible matches based on a search term.
+							Example: apropos partition
+										addpart (8) - simple wrapper around the "add partition" ioctl
+										all-swaps (7) - event signalling that all swap partitions have been ac...
+										[...]
+
+
+alias					-> Example: alias foo='cd /usr; ls; cd -'
+unalias					-> Example: unalias foo
+
+
+> ls-output.txt			-> Example: truncate an existing file or create a new empty file
+
+
+ls -l /etc > ls-output.txt 2>&1		-> redirect stout e stderr to the same file; if you want to append use >>
+
